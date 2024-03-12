@@ -4,7 +4,7 @@ namespace App\Http\Services\Specie;
 
 use App\Http\Repositories\SpecieRepository;
 
-class GetAllSpeciesService
+class  GetOneSpecieService
 {
     private $specieRepository;
 
@@ -13,8 +13,8 @@ class GetAllSpeciesService
         $this->specieRepository = $specieRepository;
     }
 
-    public function handle()
+    public function handle($id)
     {
-        return $this->specieRepository->getAll();
+        return $this->specieRepository->getOne($id);
     }
 }
